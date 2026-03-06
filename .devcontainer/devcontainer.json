@@ -1,0 +1,10 @@
+{
+  "name": "thv + Claude Code",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
