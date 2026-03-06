@@ -11,8 +11,15 @@ if [ ! -f "$HOME/.claude.json" ]; then
   echo '{}' > "$HOME/.claude.json"
 fi
 
-# Register Claude Code as a thv client
+# Ensure VS Code Server MCP config exists so thv can register itself
+mkdir -p "$HOME/.vscode-server/data/User"
+if [ ! -f "$HOME/.vscode-server/data/User/mcp.json" ]; then
+  echo '{}' > "$HOME/.vscode-server/data/User/mcp.json"
+fi
+
+# Register clients
 thv client register claude-code
+thv client register vscode-server
 
 # Start mermaid MCP server
 thv run mermaid
